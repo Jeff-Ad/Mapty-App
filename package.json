@@ -1,0 +1,15 @@
+{
+  "name": "mapty-app",
+  "version": "1.0.0",
+  "description": "Mapty app for workout data ",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Adakole Jeffrey",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0"
+  }
+}
