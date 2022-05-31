@@ -71,6 +71,12 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
+const checkbox = document.getElementById('checkbox');
+checkbox.addEventListener('change', function () {
+  // listen for change
+  document.body.classList.toggle('dark');
+});
+
 class App {
   #map;
   #mapZoomLevel = 13;
@@ -269,7 +275,7 @@ class App {
         duration: 1,
       },
     });
-    // using thr public interface
+    // using the public interface
     workout.click();
   }
   _setLocalStorage() {
