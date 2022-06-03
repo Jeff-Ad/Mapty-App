@@ -76,6 +76,11 @@ checkbox.addEventListener('change', function () {
   // listen for change
   document.body.classList.toggle('dark');
 });
+let btn = document.querySelector('#btn');
+let sidebar = document.querySelector('.sidebar');
+btn.addEventListener('click', function () {
+  sidebar.classList.toggle('active');
+});
 
 class App {
   #map;
