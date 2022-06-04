@@ -111,7 +111,7 @@ a:visited {
   list-style: none;
   height: 76vh;
   overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 .workouts::-webkit-scrollbar {
@@ -447,21 +447,65 @@ body.dark .sidebar {
     height: 80%;
     width: 100%;
   }
+
+  .sidebar.active {
+    width: 100%;
+  }
+  .sidebar #btn {
+    position: fixed;
+    color: rgb(255, 255, 255);
+    bottom: 30px;
+    right: 30px;
+    font-size: 20px;
+    height: 70px;
+    width: 50px;
+    /* text-align: center; */
+    /* line-height: 10px; */
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.5s ease;
+    opacity: 0;
+  }
+  .sidebar.active #btn {
+    left: 30%;
+  }
+  .logo {
+    justify-self: center;
+    size: 10px;
+    height: 5.2rem;
+    justify-items: center;
+    opacity: 1;
+    /* margin-bottom: 100px; */
+    /* align-self: center; */
+    /* margin-bottom: 4rem; */
+  }
+  .sidebar.active .logo {
+    opacity: 1;
+  }
+  .copyright {
+    margin-top: auto;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--color-light--1);
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 490px) {
   .workouts {
     list-style: none;
-    height: 60vh;
+    height: 59vh;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: scroll;
   }
 
   .workouts::-webkit-scrollbar {
-    width: 0;
+    width: 1;
   }
 
   .workout {
     background-color: var(--color-dark--2);
     border-radius: 5px;
-    /* width: 50px; */
+    width: 500px;
     padding: 1rem 1.25rem;
     margin-bottom: 0.7rem;
 
@@ -505,47 +549,5 @@ body.dark .sidebar {
     color: var(--color-light--1);
     text-transform: uppercase;
     font-weight: 500;
-  }
-
-  .sidebar.active {
-    width: 100%;
-  }
-  .sidebar #btn {
-    position: fixed;
-    color: rgb(255, 255, 255);
-    bottom: 30px;
-    right: 30px;
-    font-size: 20px;
-    height: 70px;
-    width: 50px;
-    /* text-align: center; */
-    /* line-height: 10px; */
-    transform: translateX(-50%);
-    cursor: pointer;
-    transition: all 0.5s ease;
-    opacity: 0;
-  }
-  .sidebar.active #btn {
-    left: 30%;
-  }
-  .logo {
-    justify-self: center;
-    size: 10px;
-    height: 5.2rem;
-    justify-items: center;
-    opacity: 1;
-    /* margin-bottom: 100px; */
-    /* align-self: center; */
-    /* margin-bottom: 4rem; */
-  }
-  .sidebar.active .logo {
-    opacity: 1;
-  }
-  .copyright {
-    margin-top: auto;
-    text-align: center;
-    font-size: 1.3rem;
-    color: var(--color-light--1);
-    opacity: 1;
   }
 }
