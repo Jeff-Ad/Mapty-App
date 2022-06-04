@@ -60,6 +60,7 @@ a:visited {
   width: 5%;
   height: 100%;
   flex-direction: column;
+  transition: all 0.5s ease;
 }
 .sidebar.active {
   width: 600px;
@@ -72,15 +73,15 @@ a:visited {
   font-size: 20px;
   height: 50px;
   width: 50px;
-  text-align: center;
+  text-align: end;
   line-height: 20px;
-  margin-left: 40px;
+  margin-left: 20px;
   transform: translateX(-50%);
   cursor: pointer;
   transition: all 0.5s ease;
 }
 .sidebar.active #btn {
-  left: 38%;
+  left: 570px;
 }
 /* .sidebar {
   flex-basis: 50rem;
@@ -108,7 +109,7 @@ a:visited {
 }
 .workouts {
   list-style: none;
-  height: 77vh;
+  height: 76vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -128,6 +129,7 @@ a:visited {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0.75rem 1.5rem;
 }
+
 .workout--running {
   border-left: 5px solid var(--color-brand--2);
 }
@@ -224,9 +226,13 @@ a:visited {
 
 .copyright {
   margin-top: auto;
-  font-size: 1.3rem;
   text-align: center;
+  font-size: 1.3rem;
   color: var(--color-light--1);
+  opacity: 0;
+}
+.sidebar.active .copyright {
+  opacity: 1;
 }
 
 .twitter-link:link,
@@ -338,26 +344,54 @@ body.dark .container {
 body.dark .sidebar {
   background-color: var(--color-dark--3);
 }
-@media only screen and (max-width: 1200px) {
-  .container {
-    display: flex;
-    /* flex-direction: row-reverse; */
-    /* width: 50%; */
+
+@media only screen and (max-width: 1280px) {
+  .sidebar #btn {
+    position: fixed;
+    color: rgb(255, 255, 255);
+    top: 30px;
+    left: 5%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: end;
+    line-height: 20px;
+    margin-left: 35px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.5s ease;
   }
-  #map {
-    width: 100%;
-  }
-  .sidebar {
-    height: 100%;
-    /* width: 80%; */
+  .sidebar.active #btn {
+    left: 589px;
+    margin: 0px 0px 0px 0px;
   }
 }
-@media only screen and (max-width: 650px) {
-  .diiv {
-    position: absolute;
+@media only screen and (max-width: 1024px) {
+  .sidebar #btn {
+    position: fixed;
+    color: rgb(255, 255, 255);
+    top: 30px;
+    left: 5%;
+    font-size: 20px;
+    height: 50px;
     width: 50px;
+    text-align: end;
+    line-height: 20px;
+    margin-left: 35px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  .sidebar.active #btn {
+    left: 589px;
+  }
+}
+@media only screen and (max-width: 970px) {
+  .diiv {
+    display: flex;
+    flex-direction: column-reverse;
     bottom: 30px;
-    right: 30px;
+    /* right: 30px; */
     cursor: pointer;
   }
   .label {
@@ -477,7 +511,7 @@ body.dark .sidebar {
     width: 100%;
   }
   .sidebar #btn {
-    position: absolute;
+    position: fixed;
     color: rgb(255, 255, 255);
     bottom: 30px;
     right: 30px;
@@ -489,7 +523,7 @@ body.dark .sidebar {
     transform: translateX(-50%);
     cursor: pointer;
     transition: all 0.5s ease;
-    /* opacity: 0; */
+    opacity: 0;
   }
   .sidebar.active #btn {
     left: 30%;
@@ -505,6 +539,13 @@ body.dark .sidebar {
     /* margin-bottom: 4rem; */
   }
   .sidebar.active .logo {
+    opacity: 1;
+  }
+  .copyright {
+    margin-top: auto;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--color-light--1);
     opacity: 1;
   }
 }
